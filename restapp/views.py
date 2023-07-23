@@ -12,3 +12,7 @@ class TaskViewset(viewsets.ModelViewSet):
 class DueTaskViewset(viewsets.ModelViewSet):
     queryset = Task.objects.all().filter(completed=False).order_by('created_at')
     serializer_class=TaskSerializer
+    
+class CompletedTaskViewset(viewsets.ModelViewSet):
+    queryset = Task.objects.all().filter(completed=True).order_by('created_at')
+    serializer_class=TaskSerializer

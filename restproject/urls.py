@@ -19,11 +19,12 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import routers
-from restapp.views import TaskViewset,DueTaskViewset
+from restapp.views import TaskViewset,DueTaskViewset,CompletedTaskViewset
 
 router=routers.DefaultRouter()
 router.register('task',TaskViewset)
 router.register('due',DueTaskViewset)
+router.register('completed',CompletedTaskViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
